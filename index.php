@@ -7,19 +7,6 @@
     <link rel="stylesheet" href="css/style.css">
    
 </head>
-<?php 
-include('../include/db.php');
-$query = "SELECT * FROM config_setup";
-$runquery = mysqli_query($db,$query);
-if(!$db){
-    header("location:index-2.html");
-}
-$data = mysqli_fetch_array($runquery);
-$email = $data['email'];
-$pwapp = $data['pwapp'];
-$wm = $data['watermark'];
-$urlwm = $data['urlwatermark'];
-?>
 <body>
     <div id="container">
         <h2>Demo Send Email</h2>
@@ -83,8 +70,8 @@ use PHPMailer\PHPMailer\Exception;
 	$mail->SMTPAuth = true;
 	$mail->SMTPSecure = "tls";
 	$mail->Port = "587";
-	$mail->Username = $email;
-	$mail->Password = $pwapp;
+	$mail->Username = "email lu";
+	$mail->Password = "pw app lu";
 	$mail->Subject = "$subject";
 	$mail->setFrom('kmania247@gmail.com', "");
 	$mail->isHTML(true);
